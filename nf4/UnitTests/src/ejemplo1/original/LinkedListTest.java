@@ -1,4 +1,4 @@
-package original;
+package ejemplo1.original;
 
 import org.junit.jupiter.api.Assertions;
 

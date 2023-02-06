@@ -1,4 +1,4 @@
-package original;
+package ejemplo1.original;
 
 /*============================================================================
 Name        : LinkedList.java
@@ -34,21 +34,12 @@ class LinkedList
 
     public void addAtHead(Object dat)
     {
-        Node temp = head;
-        head = new Node(dat);
-        head = temp;
-        numNodes++;
+       addAtIndex(0,dat);
     }
 
     public void addAtTail(Object dat)
     {
-        Node temp = head;
-        while(temp.next != null)
-        {
-            temp = temp.next;
-        }
-
-        temp.next = new Node(dat);
+        addAtIndex(numNodes,dat);
     }
 
     public void addAtIndex(int index, Object dat)
@@ -100,7 +91,14 @@ class LinkedList
 
     public String toString()
     {
-        throw new UnsupportedOperationException("Not implemented");
+        String p ="";
+        Node act = head;
+        while (act!=null){
+            p+=act.getData();
+            if(act.next!=null)p+=" => ";
+            act = act.next;
+        }
+        return p;
     }
 
     public int getSize()
